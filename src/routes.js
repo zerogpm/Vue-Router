@@ -1,10 +1,35 @@
-import User from './components/user/User'
 import Home from './components/Home'
 import Header from './components/Header'
-import About from './components/About'
-import UserDetail from './components/user/UserDetail'
-import UserStart from './components/user/UserStart'
-import UserEdit from './components/user/UserEdit'
+
+const User = resolve => {
+  require.ensure(['./components/user/User.vue'], () => {
+    resolve(require('./components/user/User'))
+  }, 'user')
+};
+
+const About = resolve => {
+  require.ensure(['./components/About.vue'], () => {
+    resolve(require('./components/About.vue'))
+  }, 'user')
+};
+
+const UserDetail = resolve => {
+  require.ensure(['./components/user/UserDetail.vue'], () => {
+    resolve(require('./components/user/UserDetail.vue'))
+  }, 'user')
+};
+
+const UserStart = resolve => {
+  require.ensure(['./components/user/UserStart.vue'], () => {
+    resolve(require('./components/user/UserStart.vue'))
+  }, 'user')
+};
+
+const UserEdit = resolve => {
+  require.ensure(['./components/user/UserEdit.vue'], () => {
+    resolve(require('./components/user/UserEdit.vue'))
+  }, 'user')
+};
 
 export const routes = [
   { path: '', component: Home, name: "home", components: {
