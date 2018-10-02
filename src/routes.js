@@ -1,35 +1,13 @@
 import Home from './components/Home'
 import Header from './components/Header'
 
-const User = resolve => {
-  require.ensure(['./components/user/User.vue'], () => {
-    resolve(require('./components/user/User'))
-  }, 'user')
-};
 
-const About = resolve => {
-  require.ensure(['./components/About.vue'], () => {
-    resolve(require('./components/About.vue'))
-  }, 'user')
-};
+const User = () => import(/* webpackChunkName: "user" */ './components/user/User.vue')
+const About = () => import(/* webpackChunkName: "About" */ './components/About.vue')
+const UserDetail = () => import(/* webpackChunkName: "user" */ './components/user/UserDetail.vue')
+const UserStart = () => import(/* webpackChunkName: "user" */ './components/user/UserStart.vue')
+const UserEdit = () => import(/* webpackChunkName: "user" */ './components/user/UserEdit.vue')
 
-const UserDetail = resolve => {
-  require.ensure(['./components/user/UserDetail.vue'], () => {
-    resolve(require('./components/user/UserDetail.vue'))
-  }, 'user')
-};
-
-const UserStart = resolve => {
-  require.ensure(['./components/user/UserStart.vue'], () => {
-    resolve(require('./components/user/UserStart.vue'))
-  }, 'user')
-};
-
-const UserEdit = resolve => {
-  require.ensure(['./components/user/UserEdit.vue'], () => {
-    resolve(require('./components/user/UserEdit.vue'))
-  }, 'user')
-};
 
 export const routes = [
   { path: '', component: Home, name: "home", components: {
