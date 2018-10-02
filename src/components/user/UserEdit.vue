@@ -1,5 +1,8 @@
 <template>
-    <h3>Edit the User</h3>
+    <div>
+        <h3>Edit the User</h3>
+        <p>Edit User ID: {{ $route.params.id }}</p>
+    </div>
 </template>
 
 <script>
